@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use App\Http\Requests\StoreMahasiswaRequest;
 use App\Http\Requests\UpdateMahasiswaRequest;
+use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
 {
@@ -13,9 +14,11 @@ class MahasiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $mahasiswa= Mahasiswa::paginate(3);
+        $mahasiswa= Mahasiswa::when($request->name, function ($query, $name) {
+            return $query->where('nama', 'like', '%'. $name .'%');
+        } )->latest()->paginate(3);
         return view('mahasiswa.index',compact('mahasiswa'));
     }
 
