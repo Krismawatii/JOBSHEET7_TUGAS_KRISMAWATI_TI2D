@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Mahasiswa;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,5 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         //$this->call(MahasiswaSeeder::class);
+        Mahasiswa::factory(10)->create();
     }
 }
