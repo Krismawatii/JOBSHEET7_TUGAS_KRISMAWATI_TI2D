@@ -23,6 +23,21 @@
             <th>:</th>
             <td>{{$mahasiswa -> jurusan}}</td>
         </tr>
+        <tr>
+            <th>E-Mail</th>
+            <th>:</th>
+            <td>{{$mahasiswa -> email}}</td>
+        </tr>
+        <tr>
+            <th>Alamat</th>
+            <th>:</th>
+            <td>{{$mahasiswa -> alamat}}</td>
+        </tr>
+        <tr>
+            <th>Tanggal Lahir</th>
+            <th>:</th>
+            <td>{{$mahasiswa -> tanggal_lahir}}</td>
+        </tr>
     </tbody>
 </table>
 @endsection
